@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# Day 3 — Random Quote Generator (React + TypeScript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web app that fetches and displays a random inspirational quote with smooth animations, built with a modern React stack.
 
-Currently, two official plugins are available:
+## Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Quote loaded](../../docs/screenshots/random_quote_ss1.png)
+![New quote animation](../../docs/screenshots/random_quote_ss2.png)
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Tool | Purpose |
+|---|---|
+| React 19 + TypeScript | UI framework |
+| Vite | Build tool & dev server |
+| Tailwind CSS v4 | Utility-first styling |
+| Framer Motion | Card transition animations |
+| Lucide React | Icons |
+| DummyJSON API | Quote data source |
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Fetches a random quote on load and on button click
+- Animated card transition between quotes (Framer Motion)
+- Copy quote to clipboard with one click
+- Loading and error states handled gracefully
+- Responsive glassmorphism UI
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd 100DaysCoding/random_quote_generator/random-quote-generator
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open `http://localhost:5173` in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## API
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Quotes are sourced from the free [DummyJSON Quotes API](https://dummyjson.com/quotes/random):
+
+```
+GET https://dummyjson.com/quotes/random
+→ { "id": 1, "quote": "...", "author": "..." }
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   └── QuoteGenerator.tsx   # Main quote component (fetch, display, copy)
+├── App.tsx                  # Root component
+├── main.tsx                 # React entry point
+└── index.css                # Tailwind CSS import
 ```
