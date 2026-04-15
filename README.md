@@ -11,6 +11,7 @@ A collection of projects built during the #100DaysOfCode challenge — one proje
 | [Day 1](#day-1--to-do-list) | To-Do List | C++ |
 | [Day 2](#day-2--simple-calculator) | Simple Calculator | HTML / CSS / JavaScript |
 | [Day 3](#day-3--random-quote-generator) | Random Quote Generator | React + TypeScript + Tailwind + Framer Motion |
+| [Day 4](#day-4--delaysearch) | DelaySearch | React + Vite |
 
 ---
 
@@ -44,7 +45,21 @@ A web app that fetches a random quote from an API and displays it with smooth an
 
 **Key concepts:** React hooks, async fetch, Tailwind CSS v4, Framer Motion animations
 
-![Random Quote Generator — screenshot 1](docs/screenshots/random_quote_ss1.png)
+![Random Quote Generator — screenshot](docs/screenshots/random_quote_ss1.png)
+
+---
+
+### Day 4 — DelaySearch
+
+> **Folder:** [`debounce_search_app/debounce_search_app/`](debounce_search_app/debounce_search_app/) &nbsp;|&nbsp; **Stack:** React + Vite
+
+A debounced GitHub user search app. Waits until you stop typing before calling the GitHub API — no redundant requests, smooth experience. Results display user avatars and link directly to GitHub profiles.
+
+**Key concepts:** debouncing, custom React hooks, `useEffect` cleanup, GitHub REST API
+
+<!-- Add screenshot below once captured -->
+
+![DelaySearch — screenshot](docs/screenshots/delaysearch_ss1.png)
 
 ---
 
@@ -55,6 +70,7 @@ A web app that fetches a random quote from an API and displays it with smooth an
 | To-Do List | `cd todo_app && g++ -o todoList toDoList.cpp && ./todoList` |
 | Simple Calculator | Open `simple_calculator/index.html` in a browser |
 | Random Quote Generator | `cd random_quote_generator/random-quote-generator && npm install && npm run dev` |
+| DelaySearch | `cd debounce_search_app/debounce_search_app && npm install && npm run dev` |
 
 ---
 
@@ -66,6 +82,8 @@ A web app that fetches a random quote from an API and displays it with smooth an
 ├── simple_calculator/                 # Day 2 — Vanilla JS calculator
 ├── random_quote_generator/            # Day 3 — React quote app
 │   └── random-quote-generator/
+├── debounce_search_app/               # Day 4 — DelaySearch
+│   └── debounce_search_app/
 └── docs/
     └── screenshots/                   # Project screenshots
 ```
