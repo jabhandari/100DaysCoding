@@ -12,6 +12,7 @@ A collection of projects built during the #100DaysOfCode challenge — one proje
 | [Day 2](#day-2--simple-calculator) | Simple Calculator | HTML / CSS / JavaScript |
 | [Day 3](#day-3--random-quote-generator) | Random Quote Generator | React + TypeScript + Tailwind + Framer Motion |
 | [Day 4](#day-4--delaysearch) | DelaySearch | React + Vite |
+| [Day 5](#day-5--dresscord) | Dresscord | Node.js |
 
 ---
 
@@ -63,6 +64,20 @@ A debounced GitHub user search app. Waits until you stop typing before calling t
 
 ---
 
+### Day 5 — Dresscord
+
+> **Folder:** [`dresscord/`](dresscord/) &nbsp;|&nbsp; **Stack:** Node.js
+
+A script that fetches today's weather forecast for a given location and posts a clothing suggestion to a Discord channel via webhook. Uses the free Open-Meteo API — no API key required.
+
+**Key concepts:** async/await, REST API consumption, Discord webhooks, conditional logic
+
+<!-- Add screenshot below once captured -->
+
+![Dresscord — Discord message](docs/screenshots/dresscord_ss1.png)
+
+---
+
 ## Quick Start
 
 | Project | How to run |
@@ -71,6 +86,7 @@ A debounced GitHub user search app. Waits until you stop typing before calling t
 | Simple Calculator | Open `simple_calculator/index.html` in a browser |
 | Random Quote Generator | `cd random_quote_generator/random-quote-generator && npm install && npm run dev` |
 | DelaySearch | `cd debounce_search_app/debounce_search_app && npm install && npm run dev` |
+| Dresscord | `cd dresscord && npm install && node index.js` |
 
 ---
 
@@ -82,8 +98,9 @@ A debounced GitHub user search app. Waits until you stop typing before calling t
 ├── simple_calculator/                 # Day 2 — Vanilla JS calculator
 ├── random_quote_generator/            # Day 3 — React quote app
 │   └── random-quote-generator/
-├── debounce_search_app/               # Day 4 — DelaySearch
+├── debounce_search_app/               # Day 4 — DelaySearch (React)
 │   └── debounce_search_app/
+├── dresscord/                         # Day 5 — Discord weather bot (Node.js)
 └── docs/
     └── screenshots/                   # Project screenshots
 ```
