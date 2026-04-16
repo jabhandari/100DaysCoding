@@ -7,6 +7,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 11 * * *"  # 7 AM Toronto
+    - cron: "52 22 * * *"  # 6:50 PM Toronto
 
 jobs:
   send-weather-alert:
