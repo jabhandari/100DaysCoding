@@ -7,8 +7,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 11 * * *"  # 7 AM Toronto
-    - cron: "52 22 * * *"  # 6:50 PM Toronto
-    - cron: "*/2 * * * *"
+    
 jobs:
   send-weather-alert:
     runs-on: ubuntu-latest
