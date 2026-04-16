@@ -28,4 +28,4 @@ jobs:
       - name: Run script
         run: npm start
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.https://discord.com/api/webhooks/1494457174108405960/MT6wYEtklb12clJCtTuXSASDhMQ6FVGXEaVpX_S66fSVUwwj9U0UsySV1zXUL-MwQhQ8 }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
