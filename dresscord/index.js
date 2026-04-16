@@ -9,12 +9,14 @@ const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitu
     Response = await axios.get(url);
     const daily= Response.data.daily;
 
+    if (!daily){
+        throw new Error('No daily weather data found');
+    }
     const maxTemp= Math.trunc(daily.temperature_2m_max[0]);
     const minTemp= Math.trunc(daily.temperature_2m_min[0]);
     const rain= Math.trunc(daily.precipitation_sum[0]);
 
     const averageTemp= (maxTemp + minTemp) / 2;
-    console.log(Response.data);
     return{
         maxTemp,
         minTemp,
@@ -41,11 +43,14 @@ function suggestClothing(weather) {
 
 async function sendToDiscord(weather, clothingSuggestion) {
     const message = {
-        content: `Today's weather: Max Temp: ${weather.maxTemp}°C, 
+        content: `
+        Good Morning ☀️
+        Today's weather: Max Temp: ${weather.maxTemp}°C, 
         Min Temp: ${weather.minTemp}°C, 
         Average Temp: ${weather.averageTemp}°C, 
         Rain: ${weather.rain}mm. 
-        Clothing Suggestion: ${clothingSuggestion}`
+        👕 Clothing Suggestion:
+        ${clothingSuggestion}`
     };
     await axios.post(webhookUrl, message);
 }
