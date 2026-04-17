@@ -1,0 +1,48 @@
+{
+  "name": "git-pull-reminder",
+  "displayName": "Git Pull Reminder",
+  "description": "Reminds you to pull the latest changes when you open a folder in VS Code.",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitPullReminder.checkPull",
+        "title": "Git Pull Reminder: Check Pull"
+      }
+    ],
+    "configuration": {
+      "title": "Git Pull Reminder",
+      "properties": {
+        "gitPullReminder.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show a reminder to pull when opening a workspace."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.0.0",
+    "typescript": "^5.0.0"
+  }
+}
