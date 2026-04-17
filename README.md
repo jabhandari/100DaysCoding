@@ -13,6 +13,7 @@ A collection of projects built during the #100DaysOfCode challenge — one proje
 | [Day 3](#day-3--random-quote-generator) | Random Quote Generator | React + TypeScript + Tailwind + Framer Motion |
 | [Day 4](#day-4--delaysearch) | DelaySearch | React + Vite |
 | [Day 5](#day-5--dresscord) | Dresscord | Node.js |
+| [Day 6](#day-6--git-pull-reminder) | Git Pull Reminder | TypeScript + VS Code API |
 
 ---
 
@@ -68,13 +69,37 @@ A debounced GitHub user search app. Waits until you stop typing before calling t
 
 > **Folder:** [`dresscord/`](dresscord/) &nbsp;|&nbsp; **Stack:** Node.js
 
-A script that fetches today's weather forecast for a given location and posts a clothing suggestion to a Discord channel via webhook. Uses the free Open-Meteo API — no API key required.
+A script that fetches today's weather forecast for a given location and posts a clothing suggestion to a Discord channel via webhook. Uses the free Open-Meteo API — no API key required. Runs daily via GitHub Actions.
 
-**Key concepts:** async/await, REST API consumption, Discord webhooks, conditional logic
+**Key concepts:** async/await, REST API consumption, Discord webhooks, GitHub Actions scheduling
 
 <!-- Add screenshot below once captured -->
 
 ![Dresscord — Discord message](docs/screenshots/dresscord_ss1.png)
+
+---
+
+### Day 6 — Git Pull Reminder
+
+> **Folder:** [`git_pull_reminder/`](git_pull_reminder/) &nbsp;|&nbsp; **Stack:** TypeScript + VS Code Extension API
+
+A published VS Code extension that pops up a reminder to pull the latest Git changes every time you open a workspace. Clicking **Pull Now** runs `git pull` directly from the notification — no terminal needed.
+
+**Status: Installed and working** — the packaged `.vsix` is included in the repo and ready to install.
+
+**Key concepts:** VS Code Extension API, TypeScript, extension activation lifecycle, command registration
+
+<!-- Add screenshot below once captured -->
+
+![Git Pull Reminder — notification](docs/screenshots/git_pull_reminder_ss1.png)
+
+#### Quick install
+
+```bash
+code --install-extension git_pull_reminder/git-pull-reminder-0.0.1.vsix
+```
+
+Or: Extensions panel (`Ctrl+Shift+X`) → `···` menu → **Install from VSIX…** → select the file.
 
 ---
 
@@ -87,6 +112,7 @@ A script that fetches today's weather forecast for a given location and posts a 
 | Random Quote Generator | `cd random_quote_generator/random-quote-generator && npm install && npm run dev` |
 | DelaySearch | `cd debounce_search_app/debounce_search_app && npm install && npm run dev` |
 | Dresscord | `cd dresscord && npm install && node index.js` |
+| Git Pull Reminder | `code --install-extension git_pull_reminder/git-pull-reminder-0.0.1.vsix` |
 
 ---
 
@@ -101,6 +127,8 @@ A script that fetches today's weather forecast for a given location and posts a 
 ├── debounce_search_app/               # Day 4 — DelaySearch (React)
 │   └── debounce_search_app/
 ├── dresscord/                         # Day 5 — Discord weather bot (Node.js)
+├── git_pull_reminder/                 # Day 6 — VS Code extension (TypeScript)
+│   └── git-pull-reminder-0.0.1.vsix  #         ← install this
 └── docs/
     └── screenshots/                   # Project screenshots
 ```
