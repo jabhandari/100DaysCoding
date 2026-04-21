@@ -2,6 +2,8 @@
 
 A command-line to-do list manager built in C++ as the first project of the 100 Days of Code challenge.
 
+---
+
 ## Features
 
 - Add tasks with a description
@@ -9,9 +11,13 @@ A command-line to-do list manager built in C++ as the first project of the 100 D
 - View all tasks with their status (Pending / Completed)
 - Remove tasks by index
 
+---
+
 ## Requirements
 
-- C++ compiler (GCC, Clang, or MSVC / Visual Studio)
+- C++ compiler (GCC, Clang, or MSVC)
+
+---
 
 ## Getting Started
 
@@ -26,6 +32,8 @@ g++ -o todoList toDoList.cpp
 # Run
 ./todoList
 ```
+
+---
 
 ## Example Usage
 
@@ -49,10 +57,27 @@ Tasks:
 Enter Task id to remove: 1
 ```
 
-## Code Structure
+---
+
+## How It Works
+
+The app is structured around a `toDoList` class that owns a `vector<Task>`. Each `Task` is a struct holding a description string and a boolean `completed` flag. The menu loop reads user input and dispatches to the appropriate method — add, remove, view, or complete.
+
+---
+
+## Project Structure
 
 | File | Description |
 |---|---|
 | `toDoList.h` | `Task` struct and `toDoList` class declaration |
 | `toDoList.cpp` | Class method implementations |
 | `project1.cpp` | Main program loop and user menu |
+
+---
+
+## Key Concepts
+
+- OOP — structs, classes, encapsulation
+- `std::vector` for dynamic task storage
+- User input handling with `cin` / `getline`
+- CLI menu-driven control flow
