@@ -6,8 +6,6 @@ A debounced GitHub user search app built with React. Waits until you stop typing
 
 ## Screenshots
 
-<!-- Add screenshots below once captured -->
-
 ![DelaySearch — main view](../../docs/screenshots/delaysearch_ss1.png)
 
 ![DelaySearch — search results](../../docs/screenshots/delaysearch_ss2.png)

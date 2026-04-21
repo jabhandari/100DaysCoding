@@ -8,8 +8,6 @@ A lightweight VS Code extension that reminds you to pull the latest changes ever
 
 ## Screenshots
 
-<!-- Add screenshots below once captured -->
-
 ![Git Pull Reminder — notification popup](../docs/screenshots/git_pull_reminder_ss1.png)
 
 ---

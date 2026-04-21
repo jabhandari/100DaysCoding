@@ -6,8 +6,6 @@ A Node.js script that fetches today's weather forecast for a location and posts 
 
 ## Screenshots
 
-<!-- Add screenshots below once captured -->
-
 ![Dresscord — Discord message](../docs/screenshots/dresscord_ss1.png)
 
 ---
