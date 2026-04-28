@@ -6,14 +6,14 @@ A collection of projects built during the #100DaysOfCode challenge — one proje
 
 ## Index
 
-| Day | Project | Stack |
-|---|---|---|
-| [Day 1](#day-1--to-do-list) | To-Do List | C++ |
-| [Day 2](#day-2--simple-calculator) | Simple Calculator | HTML / CSS / JavaScript |
-| [Day 3](#day-3--random-quote-generator) | Random Quote Generator | React + TypeScript + Tailwind + Framer Motion |
-| [Day 4](#day-4--delaysearch) | DelaySearch | React + Vite |
-| [Day 5](#day-5--dresscord) | Dresscord | Node.js |
-| [Day 6](#day-6--git-pull-reminder) | Git Pull Reminder | TypeScript + VS Code API |
+| Day | Project | Stack | Folder |
+|---|---|---|---|
+| [Day 1](#day-1--to-do-list) | [To-Do List](todo_app/README.md) | C++ | [`todo_app/`](todo_app/) |
+| [Day 2](#day-2--simple-calculator) | [Simple Calculator](simple_calculator/readme.md) | HTML / CSS / JavaScript | [`simple_calculator/`](simple_calculator/) |
+| [Day 3](#day-3--random-quote-generator) | [Random Quote Generator](random_quote_generator/random-quote-generator/README.md) | React + TypeScript + Tailwind + Framer Motion | [`random_quote_generator/`](random_quote_generator/random-quote-generator/) |
+| [Day 4](#day-4--delaysearch) | [DelaySearch](debounce_search_app/debounce_search_app/README.md) | React + Vite | [`debounce_search_app/`](debounce_search_app/debounce_search_app/) |
+| [Day 5](#day-5--dresscord) | [Dresscord](dresscord/README.md) | Node.js | [`dresscord/`](dresscord/) |
+| [Day 6](#day-6--git-pull-reminder) | [Git Pull Reminder](git_pull_reminder/README.md) | TypeScript + VS Code API | [`git_pull_reminder/`](git_pull_reminder/) |
 
 ---
 
