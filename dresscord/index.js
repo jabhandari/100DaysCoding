@@ -1,8 +1,8 @@
 const axios = require('axios');
 
 //location
-const latitude = 40.7128; // Example latitude (New York City)
-const longitude = -74.0060; // Example longitude (New York City)
+const latitude = 43.726230; // Example latitude (New York City)
+const longitude = -79.304453; // Example longitude (New York City)
 const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
 async function getWeather() {
 const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto`;
