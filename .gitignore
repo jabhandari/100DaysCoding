@@ -1,1 +1,5 @@
 node_modules
+
+# Ignore generated VS Code test downloads and state
+**/.vscode-test/
+**/.vscode-test.mjs
