@@ -14,13 +14,15 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:git-cha-ching.push"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "git-cha-ching.helloWorld",
-        "title": "Hello World"
+        "command": "git-cha-ching.push",
+        "title": "Git Cha-Ching: Push and play a sound"
       }
     ]
   },

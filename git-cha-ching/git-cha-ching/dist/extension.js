@@ -1,1 +1,86 @@
-"use strict";var w=Object.create;var r=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var h=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var v=(s,o)=>{for(var e in o)r(s,e,{get:o[e],enumerable:!0})},c=(s,o,e,i)=>{if(o&&typeof o=="object"||typeof o=="function")for(let n of h(o))!g.call(s,n)&&n!==e&&r(s,n,{get:()=>o[n],enumerable:!(i=f(o,n))||i.enumerable});return s};var a=(s,o,e)=>(e=s!=null?w(m(s)):{},c(o||!s||!s.__esModule?r(e,"default",{value:s,enumerable:!0}):e,s)),l=s=>c(r({},"__esModule",{value:!0}),s);var M={};v(M,{activate:()=>x,deactivate:()=>E});module.exports=l(M);var t=a(require("vscode")),p=require("child_process"),u=a(require("path"));function x(s){let o=t.commands.registerCommand("git-cha-ching.push",()=>{let e=t.workspace.workspaceFolders?.[0];if(!e){t.window.showErrorMessage("No workspace folder found.");return}t.window.showInformationMessage("Pushing to GitHub...");let i={cwd:e.uri.fsPath};(0,p.exec)("git push",i,(n,P,k)=>{if(n){t.window.showErrorMessage(`Git push failed: ${n.message}`),d(s,"error.wav");return}t.window.showInformationMessage("Git push completed successfully."),d(s,"success.wav")})});s.subscriptions.push(o)}function d(s,o){let e=u.join(s.extensionPath,"sounds",o);t.window.showInformationMessage(`Playing sound: ${e}`)}function E(){}0&&(module.exports={activate,deactivate});
+"use strict";
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+// src/extension.ts
+var extension_exports = {};
+__export(extension_exports, {
+  activate: () => activate,
+  deactivate: () => deactivate
+});
+module.exports = __toCommonJS(extension_exports);
+var vscode = __toESM(require("vscode"));
+var import_child_process = require("child_process");
+var path = __toESM(require("path"));
+function activate(context) {
+  const disposable = vscode.commands.registerCommand("git-cha-ching.push", () => {
+    const workspace2 = vscode.workspace.workspaceFolders?.[0];
+    if (!workspace2) {
+      vscode.window.showErrorMessage("No workspace folder found.");
+      return;
+    }
+    const execOptions = { cwd: workspace2.uri.fsPath };
+    vscode.window.showInformationMessage("Running git push...");
+    (0, import_child_process.exec)("git push", execOptions, (error, stdout, stderr) => {
+      if (error) {
+        vscode.window.showErrorMessage(`Git push failed: ${error.message}`);
+        playSound(context, "error.wav");
+        return;
+      }
+      vscode.window.showInformationMessage("Git push completed successfully.");
+      playSound(context, "sucess.wav");
+    });
+  });
+  context.subscriptions.push(disposable);
+}
+function playSound(context, soundFile) {
+  const soundPath = path.join(context.extensionPath, "sounds", soundFile);
+  const platform = process.platform;
+  let command;
+  if (platform === "win32") {
+    const escaped = soundPath.replace(/'/g, "''");
+    command = `powershell -NoProfile -ExecutionPolicy Bypass -Command "(New-Object Media.SoundPlayer '${escaped}').PlaySync();"`;
+  } else if (platform === "darwin") {
+    command = `afplay "${soundPath}"`;
+  } else {
+    command = `paplay "${soundPath}" || aplay "${soundPath}"`;
+  }
+  (0, import_child_process.exec)(command, (error) => {
+    if (error) {
+      vscode.window.showWarningMessage(`Unable to play sound: ${error.message}`);
+    }
+  });
+}
+function deactivate() {
+}
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  activate,
+  deactivate
+});
+//# sourceMappingURL=extension.js.map
