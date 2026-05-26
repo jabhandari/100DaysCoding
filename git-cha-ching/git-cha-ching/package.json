@@ -1,8 +1,13 @@
 {
   "name": "git-cha-ching",
   "displayName": "git-cha-ching",
-  "description": "cha-ching sound when git push is sucessful",
+  "description": "Plays a cha-ching sound when git push succeeds in VS Code",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jabhandari/100DaysCoding.git"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.120.0"
   },
